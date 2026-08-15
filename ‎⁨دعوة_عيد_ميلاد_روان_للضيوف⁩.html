@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دعوة عيد ميلاد روان 🎂</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;overflow:hidden;
+  font-family:Tahoma,Arial,sans-serif;
+  background:radial-gradient(circle at 50% 20%,#fff9fc 0,#ffeaf3 42%,#f5c7db 100%);
+  color:#63394c;display:flex;align-items:center;justify-content:center;
+}
+.card{
+  width:min(92%,530px);padding:40px 28px;text-align:center;
+  background:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.9);
+  border-radius:30px;box-shadow:0 20px 60px rgba(126,55,91,.18);
+  backdrop-filter:blur(12px);position:relative;z-index:3;
+  animation:rise 1s ease both;
+}
+.icon{font-size:42px;animation:float 2.5s ease-in-out infinite}
+h1{margin:10px 0 5px;font-size:38px;color:#a63f6e}
+.subtitle{font-size:20px;font-weight:bold;margin-bottom:22px}
+.message{font-size:18px;line-height:2;margin:0 auto 22px;max-width:430px}
+.details{
+  display:grid;gap:11px;text-align:right;margin:20px auto 24px;
+  max-width:410px;background:#fff7fb;border-radius:20px;padding:18px 20px;
+}
+.detail{font-size:16px;line-height:1.7}
+.label{font-weight:bold;color:#a63f6e}
+.footer{font-size:17px;line-height:1.8}
+.balloon{position:absolute;font-size:42px;z-index:1;animation:drift 5s ease-in-out infinite}
+.b1{left:5%;top:10%}.b2{right:7%;top:14%;animation-delay:1s}
+.b3{left:12%;bottom:12%;animation-delay:2s}.b4{right:10%;bottom:9%;animation-delay:3s}
+.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.piece{position:absolute;top:-20px;width:8px;height:14px;border-radius:3px;animation:fall linear infinite;opacity:.8}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+@keyframes rise{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-8px)}}
+@keyframes drift{50%{transform:translateY(-18px) rotate(5deg)}}
+</style>
+</head>
+<body>
+<div class="confetti" id="confetti"></div>
+<div class="balloon b1">🎈</div><div class="balloon b2">🎈</div>
+<div class="balloon b3">🎈</div><div class="balloon b4">🎈</div>
+
+<main class="card">
+  <div class="icon">🎂✨</div>
+  <h1>دعوة خاصة</h1>
+  <div class="subtitle">لحضور عيد ميلاد روان 🎀</div>
+
+  <p class="message">
+    يسعدنا دعوتكم لمشاركتنا الاحتفال بعيد ميلاد روان،
+    وقضاء أمسية جميلة مليئة بالفرح والضحك والذكريات الجميلة 🤍
+  </p>
+
+  <section class="details">
+    <div class="detail">📅 <span class="label">التاريخ:</span> السبت 15 أغسطس 2026</div>
+    <div class="detail">🕘 <span class="label">الوقت:</span> بعد صلاة العشاء</div>
+    <div class="detail">📍 <span class="label">المكان:</span> منزل محمد أبو العينين</div>
+  </section>
+
+  <div class="footer">
+    حضوركم يسعدنا ويكمل فرحتنا 🌷<br>
+    <strong>بانتظاركم لنحتفل سويًا 🎉</strong>
+  </div>
+</main>
+
+<script>
+const box=document.getElementById('confetti');
+for(let i=0;i<45;i++){
+  const p=document.createElement('span');
+  p.className='piece';
+  p.style.left=Math.random()*100+'%';
+  p.style.animationDuration=(3+Math.random()*5)+'s';
+  p.style.animationDelay=(-Math.random()*7)+'s';
+  p.style.transform=`rotate(${Math.random()*360}deg)`;
+  p.style.background=['#e58ab0','#d7a3bd','#f0c76b','#b86b91','#f7a8c8'][Math.floor(Math.random()*5)];
+  box.appendChild(p);
+}
+</script>
+</body>
+</html>
